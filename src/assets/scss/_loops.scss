@@ -1,0 +1,77 @@
+$grid-columns: 12;
+
+@for $i from 1 through $grid-columns {
+    .grid-#{$i} {
+        flex: 0 0 calc($i / $grid-columns) * 100%;
+    }
+}
+
+
+@for $i from 1 through 10 {
+
+    .mt-#{$i} {
+        margin-top: 0px + ($i * 8);
+    }
+
+    .mb-#{$i} {
+        margin-bottom: 0px + ($i * 8);
+    }
+
+    .mr-#{ $i} {
+        margin-right: 0px + ($i * 8);
+    }
+
+    .ml-#{ $i} {
+        margin-left: 0px + ($i * 8);
+    }
+
+    .my-#{ $i} {
+        margin-top: 0px + ($i * 8);
+        margin-bottom: 0px + ($i * 8);
+    }
+
+    .mx-#{ $i} {
+        margin-left: 0px + ($i * 8);
+        margin-right: 0px + ($i * 8);
+    }
+
+    .pt-#{ $i} {
+        padding-top: 0px + ($i * 8);
+    }
+
+    .pb-#{ $i} {
+        padding-bottom: 0px + ($i * 8);
+    }
+
+    .pr-#{ $i} {
+        padding-right: 0px + ($i * 8);
+    }
+
+    .pl-#{ $i} {
+        padding-left: 0px + ($i * 8);
+    }
+
+    .py-#{ $i} {
+        padding-top: 0px + ($i * 8);
+        padding-bottom: 0px + ($i * 8);
+    }
+
+    .px-#{ $i} {
+        padding-left: 0px + ($i * 8);
+        padding-right: 0px + ($i * 8);
+    }
+
+}
+
+@for $i from 1 through 6 {
+    .article-#{$i} {
+        grid-area: article-#{$i};
+
+        .image-card {
+            img {
+                height: auto;
+                max-height: 200px !important;
+            }
+        }
+    }
+}

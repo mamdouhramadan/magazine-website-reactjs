@@ -1,0 +1,706 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import './assets/scss/theme-colors';
+@import './assets/scss/loops';
+@import './assets/scss/variavle';
+@import './assets/scss/components';
+@import './assets/scss/hover-effects';
+
+// Reset All HTML Tags 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+section {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+// Pages Container Style 
+.page {
+    padding: 50px;
+    background-color: var(--background-color);
+    color: var(--text-color)
+}
+
+.page-container {
+    max-width: $container;
+    margin: auto;
+}
+
+// Main Classes 
+.bg-light {
+    background-color: var(--light-bg);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 -15px;
+    justify-content: space-between;
+}
+
+
+// Start Style Header 
+.header {
+
+    border-bottom: 3px dashed var(--gray);
+
+    .top-header {
+        .row {
+            justify-content: flex-start;
+        }
+
+        .item-list {
+            margin: 0 5px;
+            display: flex;
+            font-size: 20px;
+
+            .item-text {
+                display: block;
+                margin: 0 10px;
+
+            }
+
+            .toggle-theme-wrapper {
+                background-color: transparent;
+                border: 0;
+                color: var(--text-color);
+                font-size: 20px;
+                cursor: pointer;
+
+            }
+        }
+    }
+
+    .middle-header {
+        justify-content: center;
+        margin-bottom: 20px;
+
+        .logo-img {
+            max-width: 190px;
+        }
+    }
+
+    .nav-menu {
+        text-align: center;
+        justify-content: center;
+
+        .item-list {
+            padding: $itme-padding;
+
+            .item-link {
+                font-size: 19px;
+                font-weight: 700;
+                color: var(--text-color);
+            }
+        }
+    }
+}
+
+// Start Arcticle Card
+.article-container {
+    // display: flex;
+    // align-items: flex-start;
+    // flex-wrap: wrap;
+
+    & .latest-article {
+        display: flex;
+        flex-wrap: wrap;
+
+        .article {
+            min-height: 100px;
+        }
+    }
+
+
+}
+
+.latest-news {
+
+    .main-news,
+    .grid-news {
+        flex: 0 0 50%;
+    }
+
+    .grid-news {
+        column-count: 2;
+        column-gap: 10px;
+        display: block;
+    }
+
+    .article:not(.main-article) {
+        .image-card img {
+            max-height: 300px !important;
+        }
+    }
+
+    .article {
+        margin: 0;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        margin-bottom: 10px;
+        break-inside: avoid;
+    }
+}
+
+
+.famouses-section {
+    padding: 50px 90px;
+
+    .card-count {
+        color: var(--gray-color);
+    }
+
+    .card {
+        flex: 0 0 20%;
+    }
+}
+
+.journalists-section {
+    padding: 40px 45px;
+
+    .card-image img {
+        height: 225px;
+        object-fit: cover;
+    }
+
+    .card-title {
+        margin: 30px 0 20px;
+    }
+}
+
+.journalists-section {
+    .card {
+        flex: 0 0 25%;
+    }
+}
+
+.life-news {
+    .row {
+        justify-content: space-between;
+
+        .main-article {
+            .article-content {
+                max-width: 35%;
+                margin-left: 40px;
+            }
+        }
+
+        .grid-4 {
+            img {
+                max-height: 122px !important;
+            }
+
+            .category {
+                margin-top: 5px;
+            }
+
+        }
+    }
+}
+
+.overlay-article {
+    .article-card {
+        overflow: hidden;
+    }
+
+    .image-overlay {
+        background-size: cover;
+        background-position: center;
+        height: 600px;
+        display: flex;
+        position: relative;
+        justify-content: flex-end;
+        padding: 50px;
+        align-items: center;
+
+        &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, #000000 31.83%, rgba(0, 0, 0, 0) 100%);
+            opacity: 0.6;
+            position: absolute;
+            z-index: 0;
+
+            top: 0;
+        }
+
+        .article-content {
+            z-index: 2;
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            color: #fff;
+
+            .category {
+                position: absolute;
+                left: 0;
+                top: 30px;
+                width: 125px;
+                background-color: var(--black-color);
+                color: #fff;
+            }
+
+            .article-title {
+                order: 2;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 36px;
+                margin-bottom: 15px;
+            }
+
+            .article-description {
+                order: 1;
+                margin-bottom: 15px;
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 23px;
+            }
+
+            .article-author {
+                order: 3;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 19px;
+            }
+        }
+    }
+}
+
+.eaven-odd {
+    .article {
+        flex: 0 0 380px !important;
+
+        .article-card {
+            margin: 0 !important;
+            justify-content: flex-start;
+        }
+
+        .image-top .image-card {
+            margin-bottom: 20px;
+        }
+
+        .image-bottom .image-card {
+            margin-top: 10px;
+        }
+
+        .image-card {
+            img {
+                max-height: 350px !important;
+            }
+        }
+    }
+}
+
+.stories-articles {
+    padding: 50px 80px;
+    display: flex;
+    flex-direction: column;
+
+    .section-title {
+        @include tag-item;
+        margin: 0 auto 50px;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .stories-container {
+        background-size: 280px;
+        background-position: center;
+        background-repeat: no-repeat;
+        mix-blend-mode: multiply;
+        filter: contrast(1);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+    }
+
+    .article {
+        flex: 0 0 350px;
+
+        .article-title {
+            font-size: 26px;
+            line-height: 38px;
+            margin-top: 25px;
+            margin-bottom: 25px !important;
+        }
+
+        .article-description {
+            font-family: 'Roboto';
+            font-weight: 500;
+        }
+
+        &:nth-child(2) {
+            color: var(--gray-color);
+
+            .article-card .category {
+                color: var(--text-color);
+                background-color: transparent;
+                border: 2px solid var(--text-color);
+            }
+        }
+    }
+}
+
+.eat-news {
+    .article {
+        flex: 0 0 300px;
+
+        .image-card {
+            img {
+                max-height: 225px !important;
+            }
+        }
+    }
+}
+
+.food-article {
+    .image-card {
+        flex: 0 0 115px;
+
+        img {
+            max-height: 100px !important;
+        }
+    }
+
+    .category {
+        margin-top: 0 !important;
+    }
+}
+
+.videos-articles {
+    padding: 0 30px;
+
+    .row {
+        .article {
+            flex: 0 0 370px;
+
+            .article-content {
+                max-width: 290px;
+                margin: 20px auto;
+
+            }
+        }
+    }
+}
+
+.footer {
+    padding-top: 60px;
+    border-top: 3px dashed var(--light-bg);
+    border-bottom: 3px dashed var(--light-bg);
+
+    .footer-widgets {
+        &>.row {
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .footer-widget {
+            padding: 15px;
+            flex: 0 0 21%;
+
+            .widget-title {
+                font-weight: bold;
+                color: var(--text-color);
+                margin-bottom: 9px;
+            }
+
+            .item-link {
+                color: var(--text-color);
+                font-weight: 300;
+                display: inline-block;
+                margin-bottom: 9px;
+            }
+
+            .widget-discreption {
+                margin: 17px 0 18px;
+                font-weight: 300;
+            }
+
+            &.subscribe-widget {
+                margin-left: auto;
+                flex: 0 0 310px;
+
+                .subscribe-form {
+                    @include placeholder-color;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    background-color: var(--light-bg);
+                    padding: 7px;
+                    height: 55px;
+.form-input{
+    color: var(--text-color );
+}
+                    .form-input,
+                    .submit-btn {
+                        background-color: transparent;
+                        border: 0;
+                        outline: 0;
+                        height: 40px;
+                        padding: 0 10px;
+                    }
+
+                    .submit-btn {
+                        color: var(--black-color);
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-list {
+        justify-content: space-between;
+        padding: 0 40px;
+
+        .item-list {
+            padding: $itme-padding;
+
+            .item-link {
+                color: var(--text-color);
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.dark-mode {
+    .footer .subscribe-form {
+        border: 1px solid var(--highlight-bg) !important;
+
+        .submit-btn {
+            background-color: var(--highlight-bg) !important;
+            min-width: 90px;
+        }
+    }
+
+    .stories-container {
+        mix-blend-mode: color-dodge !important;
+        filter: invert(100%);
+    }
+}
+
+
+
+// Medium and Small devices (tablets, Mobile)
+@media (max-width: 768px) {
+    .page {
+        padding: 30px;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    section {
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+
+    .top-header {
+        margin-bottom: 25px;
+
+        &>.row {
+            flex-direction: row;
+
+        }
+    }
+
+    .navbar .nav-menu {
+        flex-direction: row;
+        margin-bottom: 20px;
+
+        .item-list {
+            padding: 10px;
+
+            .item-link {
+                font-size: 15px;
+            }
+        }
+    }
+
+    .famouses-section {
+        padding: 25px;
+
+        .row {
+            flex-direction: row;
+            justify-content: center;
+
+            &>div {
+                margin-bottom: 30px;
+                flex: 0 0 50% !important
+            }
+        }
+    }
+    
+    .journalists-section{
+        padding: 25px;
+        .row {
+            flex-direction: row;
+            justify-content: center;
+    
+
+            .card{
+                margin-bottom: 10px;
+                flex: 0 0 50% !important;
+                padding: 10px !important;
+            }
+
+        }
+    }
+
+    .overlay-article .image-overlay{
+        max-height: 400px !important;
+    }
+
+    .life-news {
+        .article.main-article {
+            .image-card {
+                flex: 0 0 100% !important;
+
+                img {
+                    max-height: 300px !important;
+                }
+            }
+
+            .article-content {
+                width: 100% !important;
+                flex: 0 0 100%;
+                margin: 0;
+            }
+        }
+    }
+
+    .overlay-article {
+        .image-overlay {
+            padding: 25px
+        }
+
+        .image-overlay .article-content .article-title {
+            font-size: 18px;
+            line-height: 28px;
+        }
+
+        .article {
+            margin-bottom: 0;
+        }
+    }
+
+    .eaven-odd {
+        padding: 0;
+
+        .article {
+            margin: 0;
+
+            .article-card {
+                flex-direction: column !important;
+            }
+        }
+    }
+
+    .stories-articles {
+        padding: 30px;
+        text-align: center;
+        position: relative;
+
+        .section-title {
+            margin-bottom: 20px;
+        }
+
+        .stories-container {
+            top: 48%;
+            transform: translateY(-50%);
+        }
+
+        &>.row {
+            row-gap: 250px;
+
+            .article-title {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .eat-news {
+        .article {
+            margin: 0;
+
+            .rate {
+                top: 200px;
+                left: 0;
+                margin: 0;
+            }
+        }
+    }
+
+    .videos-articles {
+        padding: 0;
+
+        .article {
+            margin: 0;
+        }
+    }
+
+    .footer {
+        .row {
+            flex-direction: row;
+            width: 100%;
+            flex: 0 0 100%;
+
+            .footer-widget {
+                flex: 0 0 33.33% !important
+            }
+
+            .subscribe-widget {
+                flex: 0 0 100% !important;
+            }
+
+        }
+
+        .footer-list {
+            flex-direction: row !important;
+            justify-content: center;
+            text-align: center;
+
+            .item-list {
+                padding: 15px;
+                flex: 0 0 33.33%;
+            }
+        }
+    }
+}
+
+// Large devices (desktops)
+@media (min-width: 992px) {}

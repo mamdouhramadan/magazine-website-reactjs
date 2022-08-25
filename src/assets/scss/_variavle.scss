@@ -1,0 +1,49 @@
+$itme-padding : 30px 35px;
+$container : 1320px;
+
+// Fonst Size
+$normal-font: 16px;
+$article-title: 18px;
+
+
+// General Mixin
+@mixin tag-item {
+    background-color: var(--highlight-bg);
+    color: var(--highlight-text);
+    display: inline-block;
+    margin: auto;
+    padding: 5px 14px;
+    margin: 13px 0 15px 0;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+@mixin font-description {
+    font-size: $normal-font;
+    font-family: 'Playfair Display', serif;
+}
+
+@mixin font-title {
+    font-size: $article-title;
+    font-family: 'Playfair Display', serif;
+}
+
+@mixin placeholder-color {
+    ::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: var(--text-color);
+        opacity: 1;
+        /* Firefox */
+    }
+
+    :-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: var(--text-color);
+    }
+
+    ::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: var(--text-color);
+    }
+}
